@@ -1,0 +1,58 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="calendario"
+            type="com.example.tutormatch.data.model.Calendario" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/coloreSecondario"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/orario_lezione"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{"Orario di inizio: " + calendario.oraInizio}'
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/orario_fine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{"Orario di fine: " + calendario.oraFine}'
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/stato_pren"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{"Stato Prenotazione: " + (calendario.statoPren ? "Prenotata" : "Non prenotata")}'
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/colorBackground"
+                android:text="@string/elimina"
+                android:textColor="@color/coloreSecondario" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

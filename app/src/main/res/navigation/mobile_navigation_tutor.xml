@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_tutor"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.tutormatch.ui.view.fragment.HomeFragmentTutor"
+        android:label="Home"
+        tools:layout="@layout/fragment_home_tutor">
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_prenotazione"
+        android:name="com.example.tutormatch.ui.view.fragment.PrenotazioniFragment"
+        android:label="Prenotazione"
+        tools:layout="@layout/fragment_prenotazioni" />
+
+    <fragment
+        android:id="@+id/navigation_calendario_tutor"
+        android:name="com.example.tutormatch.ui.view.fragment.CalendarioFragment"
+        android:label="Calendario"
+        tools:layout="@layout/fragment_calendario_tutor" />
+
+    <fragment
+        android:id="@+id/navigation_chat_tutor"
+        android:name="com.example.tutormatch.ui.view.fragment.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/navigation_profilo_tutor"
+        android:name="com.example.tutormatch.ui.view.fragment.ProfiloFragment"
+        android:label="Profilo"
+        tools:layout="@layout/fragment_profilo" />
+</navigation>

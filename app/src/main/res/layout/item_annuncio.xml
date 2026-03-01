@@ -1,0 +1,68 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="annuncio"
+            type="com.example.tutormatch.data.model.Annuncio" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/coloreSecondario"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/materia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{annuncio.materia}"
+                android:textAlignment="center"
+                android:textColor="@color/colorBackground"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_prezzo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"Costo: " + annuncio.prezzo + " €"}'
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/descrizione"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"Descrizione: " + (annuncio.descrizione.isEmpty() ? "Nessuna descrizione" : annuncio.descrizione)}'
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvModalita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{annuncio.getModalita()}'
+                android:textColor="@color/colorBackground"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/colorBackground"
+                android:text="@string/elimina"
+                android:textColor="@color/coloreSecondario" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

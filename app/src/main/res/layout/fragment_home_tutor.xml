@@ -1,0 +1,236 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.view.fragment.HomeFragmentTutor">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- CardView per il titolo -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/coloreSecondario"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/titolo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/home"
+                android:textColor="@color/colorBackground"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ScrollView per il contenuto principale -->
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- CardView per creare un nuovo annuncio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/coloreSecondario"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/creaAnnuncio"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Sezione per inserire i dettagli dell'annuncio -->
+                <LinearLayout
+                    android:id="@+id/Ricercapara"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Campo per la materia -->
+                    <LinearLayout
+                        android:id="@+id/Interno_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="@string/materia"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/spinnerMateria"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="2"
+                            android:entries="@array/materie_array" />
+
+                    </LinearLayout>
+
+                    <!-- Campo per il costo -->
+                    <LinearLayout
+                        android:id="@+id/Interno_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="@string/prezzo"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextNumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:hint="@string/insPrezzo"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:minHeight="48dp" />
+                    </LinearLayout>
+
+                    <!-- Campo per la descrizione -->
+                    <LinearLayout
+                        android:id="@+id/Interno_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/descrizione"
+                            android:textAlignment="viewStart"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editTextDescrizione"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/insDesc"
+                            android:minHeight="48dp" />
+                    </LinearLayout>
+
+                    <!-- Campo per la modalità di insegnamento -->
+                    <LinearLayout
+                        android:id="@+id/Interno_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/mod"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxOnline"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="@string/on" />
+
+                        <CheckBox
+                            android:id="@+id/checkBoxPresenza"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="@string/pres" />
+                    </LinearLayout>
+
+                    <!-- Pulsanti per salvare o eliminare l'annuncio -->
+                    <Button
+                        android:id="@+id/buttonSalva"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/coloreSecondario"
+                        android:text="@string/salva"
+                        android:textColor="@color/colorBackground" />
+
+                </LinearLayout>
+
+                <!-- CardView per mostrare i propri annunci -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/annunci_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="@color/coloreSecondario"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/tuoiAnnunci"
+                        android:textColor="@color/colorBackground"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- RecyclerView per elencare gli annunci -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewAnnunci"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

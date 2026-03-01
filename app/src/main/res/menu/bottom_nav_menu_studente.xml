@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_ricerca_tutor"
+        android:icon="@drawable/ricerca_p"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_prenotazione"
+        android:icon="@drawable/lista_pren"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/chat"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_profilo"
+        android:icon="@drawable/profilo"
+        android:title="" />
+</menu>
